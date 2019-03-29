@@ -9,7 +9,7 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-  return [a+b, `The sum of ${a} and ${b} is ${a+b}`];
+  return [a+b, `The sum of ${a} and ${b} is ${a+b}.`];
 }
 
 // Here is the test for sum(); uncomment it to run it
@@ -27,7 +27,7 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-  return [a*b, `The product of ${a} and ${b} is ${a*b}`];
+  return [a*b, `The product of ${a} and ${b} is ${a*b}.`];
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -52,7 +52,7 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
   let firstMuli = multiply(a,b);
   let totalSum = sum(firstSum[0], c)[0];
   let totalProd = multiply(firstMuli[0], c)[0];
-  return [totalSum, totalProd, `${a} and ${b} and ${c} sum to ${totalSum}`, `The product of ${a} and ${b} and ${c} is ${totalProd}`];
+  return [totalSum, totalProd, `${a} and ${b} and ${c} sum to ${totalSum}.`, `The product of ${a} and ${b} and ${c} is ${totalProd}.`];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -78,7 +78,7 @@ function sumArray(sumArr) { //eslint-disable-line
     let nextVAl = acc instanceof Array ? acc[0] : acc;
     return sum(nextVAl, val);
   });
-  return [total[0], `${sumArr.join(', ')} was passed in as an array of numbers, and ${total[0]} is their sum`];
+  return [total[0], `${sumArr.join(', ')} was passed in as an array of numbers, and ${total[0]} is their sum.`];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -99,7 +99,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+  let total = multArr.reduce((acc, val) => {
+    let nextVAl = acc instanceof Array ? acc[0] : acc;
+    return multiply(nextVAl, val);
+  });
+  return [total[0], `The numbers ${multArr.join(', ')} have a product of ${total[0]}.`];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it

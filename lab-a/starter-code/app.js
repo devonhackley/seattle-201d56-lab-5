@@ -50,8 +50,8 @@ Test this function by hand in the console to get it working, and when you think 
 function sumAndMultiply(a, b, c) { //eslint-disable-line
   let firstSum = sum(a,b);
   let firstMuli = multiply(a,b);
-  let totalSum = sum(firstSum[0], c)[0].toString();
-  let totalProd = multiply(firstMuli[0], c)[0].toString();
+  let totalSum = sum(firstSum[0], c)[0];
+  let totalProd = multiply(firstMuli[0], c)[0];
   return [totalSum, totalProd, `${a} and ${b} and ${c} sum to ${totalSum}`, `The product of ${a} and ${b} and ${c} is ${totalProd}`];
 }
 

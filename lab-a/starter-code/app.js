@@ -74,7 +74,11 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-
+  let total = sumArr.reduce((acc, val) => {
+    let nextVAl = acc instanceof Array ? acc[0] : acc;
+    return sum(nextVAl, val);
+  });
+  return [total[0], `${sumArr.join(', ')} was passed in as an array of numbers, and ${total[0]} is their sum`];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
